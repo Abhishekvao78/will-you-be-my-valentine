@@ -1,131 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap');
+
 body {
-    background-color: white;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
+/* Main Card */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Style */
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4b6e;
+}
+
+/* Buttons */
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    flex-direction: row;
-    align-items: end;
+    margin-top: 25px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
+#yes-button,
 #no-button {
-    margin: 0 10px;
-    color: white;
-    background-color: red;
-    height: 40px !important;
-    width: auto;
     border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    color: white;
+    border-radius: 30px;
     cursor: pointer;
-    margin-top: 10px;
-
-    p {
-        margin: 0;
-        object-fit: contain;
-    }
+    transition: all 0.3s ease;
 }
 
+/* Yes Button */
 #yes-button {
-    margin: 0 10px;
-    color: white;
-    border: none;
-    background-color: green;
-    cursor: pointer;
-    height: 40px;
-
-    p {
-        margin: 0;
-        object-fit: contain;
-    }
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+    box-shadow: 0 8px 20px rgba(86,171,47,0.4);
 }
 
-/* Make responsive for mobile */
-@media (max-width: 768px) {
-    body {
-        padding: 0 20px;
-    }
+#yes-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(86,171,47,0.6);
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
-    padding: 20px;
-    text-align: center;
+/* No Button */
+#no-button {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 8px 20px rgba(255,65,108,0.4);
 }
 
-.message {
-    display: none;
+#no-button:hover {
+    transform: scale(0.95);
 }
 
-.banner-gif {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-
-    img {
-        width: auto;
-        height: 250px;
-    }
+/* GIF Banner */
+.banner-gif img {
+    height: 220px;
+    margin-top: 15px;
+    border-radius: 15px;
 }
 
+/* Language Selector */
 .language-selector {
-    margin-top: 30px;
-    position: unset;
-    font-family: Arial, sans-serif;
+    margin-top: 25px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.language-selector label {
-    margin-right: 10px;
+    gap: 10px;
 }
 
 .language-selector select {
-    padding: 5px;
+    padding: 6px 10px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 16px;
 }
 
+/* Creator Link */
 .creator {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
     text-decoration: none;
-    color: #333;
-}
-
-.creator:visited {
-    text-decoration: none;
-    color: #333;
 }
 
 .creator:hover {
-    text-decoration: underline;
-    color: #555;
+    color: #ff4b6e;
 }
 
-/* CSS For Mobile */
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .language-selector {
-        position: unset;
-        margin-top: 30px;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+    .container {
+        padding: 20px;
     }
 }
